@@ -24,10 +24,11 @@ function create() {
   myImage.setAttribute('alt', arrayResponse[1].alt);
   myCaption.innerHTML = '<strong>' + arrayResponse[1].name + '</strong>: Taken by ' + arrayResponse[1].credit;
   
-  var imgSection = document.querySelector('section');
-  imgSection.appendChild(myFigure);
   myFigure.appendChild(myImage);
   myFigure.appendChild(myCaption);
+  var imgSection = document.querySelector('section');
+  imgSection.appendChild(myFigure);
+  
 }
 
 function jsonFlickrApi(response) {
