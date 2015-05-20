@@ -5,20 +5,14 @@ function create() {
 
   var response = perm;
   var cats = document.getElementById("cats");
-	$.each(response.photos.photo, function(i, item) {
-		var src = "https://farm"
-			+ item.farm
-			+ ".static.flickr.com/"
-			+ item.server
-			+ "/" + item.id
-			+ "_" + item.secret
-			+ "_n.jpg";
+	//$.each(response.photos.photo, function(i, item) {
+		var src = "https://farm9.static.flickr.com/8759/17724301858_a2184c4ee6_n.jpg";
 		var container = document.createElement('LI');
 		var image = document.createElement('img');
 		image.src = src;
 		container.appendChild(image);
 		cats.appendChild(container);
-	});
+	//});
 	
 	var arrayResponse = oldresponse;
 	var myImage = document.createElement('img');
