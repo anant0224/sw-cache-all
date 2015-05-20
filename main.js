@@ -20,7 +20,7 @@ function create() {
   var myCaption = document.createElement('caption');
   var imageURL = window.URL.createObjectURL(arrayResponse[0]);
 
-  myImage.src = "https://farm9.static.flickr.com/8759/17724301858_a2184c4ee6_n.jpg";
+  myImage.src = imageURL;
 
   
   myFigure.appendChild(myImage);
