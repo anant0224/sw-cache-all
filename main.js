@@ -16,24 +16,24 @@ function create() {
 		var container = document.createElement('LI');
 		var image = document.createElement('img');
 		image.src = src;
-		//container.appendChild(image);
+		container.appendChild(image);
 		cats.appendChild(container);
 	});
 	
-	/*var arrayResponse = oldresponse;
+	var arrayResponse = oldresponse;
 	var myImage = document.createElement('img');
   var myFigure = document.createElement('figure');
   var myCaption = document.createElement('caption');
   var imageURL = window.URL.createObjectURL(arrayResponse[0]);
 
-  myImage.src = imageURL;
+  myImage.src = "https://farm9.static.flickr.com/8759/17724301858_a2184c4ee6_n.jpg";
   myImage.setAttribute('alt', arrayResponse[1].alt);
   myCaption.innerHTML = '<strong>' + arrayResponse[1].name + '</strong>: Taken by ' + arrayResponse[1].credit;
   
   var imgSection = document.querySelector('section');
   imgSection.appendChild(myFigure);
   myFigure.appendChild(myImage);
-  myFigure.appendChild(myCaption);*/
+  myFigure.appendChild(myCaption);
 }
 
 function jsonFlickrApi(response) {
