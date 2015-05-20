@@ -2,7 +2,7 @@ var perm;
 var oldresponse;
 
 function create() {
-/*
+
   var response = perm;
   var cats = document.getElementById("cats");
 	$.each(response.photos.photo, function(i, item) {
@@ -14,12 +14,12 @@ function create() {
 			+ "_" + item.secret
 			+ "_n.jpg";
 		var container = document.createElement('LI');
-		var image = document.createElement('img');
-		image.src = src;
-		container.appendChild(image);
+		//var image = document.createElement('img');
+		//image.src = src;
+		//container.appendChild(image);
 		cats.appendChild(container);
 	});
-	*/
+	
 	/*var arrayResponse = oldresponse;
 	var myImage = document.createElement('img');
   var myFigure = document.createElement('figure');
