@@ -19,7 +19,7 @@ function create() {
 		cats.appendChild(container);
 	});
 	
-	var arrayResponse = oldresponse;
+	/*var arrayResponse = oldresponse;
 	var myImage = document.createElement('img');
   var myFigure = document.createElement('figure');
   var myCaption = document.createElement('caption');
@@ -32,7 +32,7 @@ function create() {
   var imgSection = document.querySelector('section');
   imgSection.appendChild(myFigure);
   myFigure.appendChild(myImage);
-  myFigure.appendChild(myCaption);
+  myFigure.appendChild(myCaption);*/
 }
 
 function jsonFlickrApi(response) {
