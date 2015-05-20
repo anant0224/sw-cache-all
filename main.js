@@ -14,8 +14,8 @@ function create() {
 			+ "_" + item.secret
 			+ "_n.jpg";
 		var container = document.createElement('LI');
-		//var image = document.createElement('img');
-		//image.src = src;
+		var image = document.createElement('img');
+		image.src = src;
 		//container.appendChild(image);
 		cats.appendChild(container);
 	});
