@@ -13,7 +13,7 @@ function jsonFlickrApi(response) {
 	});
 	*/
 	
-	var cats = document.getElementById("cat");
+	var cats = document.getElementById("cats");
 	$.each(response.photos.photo, function(i, item) {
 		var src = "https://farm"
 			+ item.farm
