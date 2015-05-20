@@ -1,19 +1,8 @@
-function jsonFlickrApi(response) {
-	/*var cats = $("#cats");
-	$.each(response.photos.photo, function(i, item) {
-		var src = "https://farm"
-			+ item.farm
-			+ ".static.flickr.com/"
-			+ item.server
-			+ "/" + item.id
-			+ "_" + item.secret
-			+ "_n.jpg";
-		var container = $("<li/>").appendTo(cats);
-		$("<img/>").attr("src", src).appendTo(container);
-	});
-	*/
-	
-	var cats = document.getElementById("cats");
+var perm;
+
+function create() {
+  var response = perm;
+  var cats = document.getElementById("cats");
 	$.each(response.photos.photo, function(i, item) {
 		var src = "https://farm"
 			+ item.farm
@@ -30,10 +19,29 @@ function jsonFlickrApi(response) {
 	});
 }
 
+function jsonFlickrApi(response) {
+  perm = response;
+	/*var cats = $("#cats");
+	$.each(response.photos.photo, function(i, item) {
+		var src = "https://farm"
+			+ item.farm
+			+ ".static.flickr.com/"
+			+ item.server
+			+ "/" + item.id
+			+ "_" + item.secret
+			+ "_n.jpg";
+		var container = $("<li/>").appendTo(cats);
+		$("<img/>").attr("src", src).appendTo(container);
+	});
+	*/
+	
+	
+}
+
 $(function() {
 
   /*var init = { method: 'GET' };    
-  fetch(imgJSON.url).then(function(response) {
+  fetch(flickr_api_url).then(function(response) {
     if (response.status == 200) {
       var arrayResponse = [];
       response.blob().then(function(myBlob) {
