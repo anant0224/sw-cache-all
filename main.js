@@ -6,7 +6,7 @@ function create() {
   var response = perm;
   var cats = document.getElementById("cats");
 	//$.each(response.photos.photo, function(i, item) {
-		var src = "https://farm9.static.flickr.com/8759/17724301858_a2184c4ee6_n.jpg";
+		var src = "https://farm9.static.flickr.com/8759/17724301858_a2184c4aa5_n.jpg";
 		var container = document.createElement('LI');
 		var image = document.createElement('img');
 		image.src = src;
@@ -21,8 +21,7 @@ function create() {
   var imageURL = window.URL.createObjectURL(arrayResponse[0]);
 
   myImage.src = "https://farm9.static.flickr.com/8759/17724301858_a2184c4ee6_n.jpg";
-  myImage.setAttribute('alt', arrayResponse[1].alt);
-  myCaption.innerHTML = '<strong>' + arrayResponse[1].name + '</strong>: Taken by ' + arrayResponse[1].credit;
+
   
   myFigure.appendChild(myImage);
   myFigure.appendChild(myCaption);
