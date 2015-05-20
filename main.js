@@ -1,4 +1,5 @@
 var perm;
+var oldresponse;
 
 function create() {
   var response = perm;
@@ -17,6 +18,21 @@ function create() {
 		container.appendChild(image);
 		cats.appendChild(container);
 	});
+	
+	var arrayResponse = oldresponse;
+	var myImage = document.createElement('img');
+  var myFigure = document.createElement('figure');
+  var myCaption = document.createElement('caption');
+  var imageURL = window.URL.createObjectURL(arrayResponse[0]);
+
+  myImage.src = imageURL;
+  myImage.setAttribute('alt', arrayResponse[1].alt);
+  myCaption.innerHTML = '<strong>' + arrayResponse[1].name + '</strong>: Taken by ' + arrayResponse[1].credit;
+  
+  var imgSection = document.querySelector('section');
+  imgSection.appendChild(myFigure);
+  myFigure.appendChild(myImage);
+  myFigure.appendChild(myCaption);
 }
 
 function jsonFlickrApi(response) {
@@ -37,6 +53,29 @@ function jsonFlickrApi(response) {
 	
 	
 }
+
+function imgLoad(imgJSON) {
+  // return a promise for an image loading
+  return new Promise(function(resolve, reject) {
+
+    var init = { method: 'GET' };    
+    fetch(imgJSON.url).then(function(response) {
+      if (response.status == 200) {
+        var arrayResponse = [];
+        response.blob().then(function(myBlob) {
+          arrayResponse[0] = myBlob;
+          arrayResponse[1] = imgJSON;
+          resolve(arrayResponse);
+        });
+
+      } else {
+        reject(Error('Image didn\'t load successfully; error code:' + response.statusText));
+      }
+    }, function() {
+      reject(Error('There was a network error.'));
+    }); 
+  });
+};
 
 $(function() {
 
@@ -84,6 +123,13 @@ $(function() {
 			console.log(err);
 		}
 	});
+	
+  imgLoad(Gallery.images[0]).then(function(arrayResponse) {
+    oldresponse = arrayResponse;
+  }, function(Error) {
+    console.log(Error);
+  });      
+	
 });
 
 if(navigator.serviceWorker) {
