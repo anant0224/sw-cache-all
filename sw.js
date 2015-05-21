@@ -14,12 +14,12 @@ if(typeof self.CACHE_NAME !== 'string') {
 }
 
 self.addEventListener('fetch', function(event) {
-console.log("wtf");
+
 	// Clone the request for fetch and cache
 	// A request is a stream and can be consumed only once.
 	var fetchRequest = event.request.clone(),
 		cacheRequest = event.request.clone();
-fetch(fetchRequest);
+
 	// Respond with content from fetch or cache
 	event.respondWith(
 
