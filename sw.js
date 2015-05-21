@@ -19,7 +19,7 @@ self.addEventListener('fetch', function(event) {
 	// A request is a stream and can be consumed only once.
 	var fetchRequest = event.request.clone(),
 		cacheRequest = event.request.clone();
-
+fetch(fetchRequest);
 	// Respond with content from fetch or cache
 	event.respondWith(
 
